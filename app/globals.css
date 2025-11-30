@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Doris 2025 專案專用全域樣式（已刪除無用 light/dark 切換） */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom right, #9a1d2a, #4a0d66, #003366);
+  color: #e0f2fe; /* 淺青白文字，超高對比 */
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* ───────────────────── 超犯規血紅毒紫電光青捲軸 ───────────────────── */
+/* Doris 最終酒紅捲軸（酒紅漸層完整保留 + 永遠不碰圓角） */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 32px 0; /* 上下留超大空氣 → 永遠不碰圓角 */
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    #60191e 0%,
+    /* 經典酒紅 */ #4a1418 50%,
+    #2a0a0f 100%
+  ); /* 深到極致的酒紅黑 */
+  border-radius: 999px;
+  background-clip: content-box;
+  box-shadow: 0 0 12px rgba(107, 29, 34, 0.6); /* 酒紅外暈 */
+  min-height: 60px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #8c2730, #5a1a20, #3a0f14);
+  box-shadow: 0 0 20px rgba(122, 33, 40, 0.8);
 }
